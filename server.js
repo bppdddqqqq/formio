@@ -45,6 +45,8 @@ module.exports = function(options) {
   // Use the given config.
   const config = options.config || require('config');
 
+  config.port = process.env.PORT || config.port;
+
   // Configure nunjucks.
   nunjucks.configure('client', {
     autoescape: true,
